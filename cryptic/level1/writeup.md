@@ -5,16 +5,15 @@ JyYlJCMiIX59fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtK
 egamer
 
 ## Walkthrough
-* Image when stegged w/ incoherency we get Joby + Chair referring to Joby chairperson which is Paul Sciarra
-* He founded Pinterest
-* Image’s author in exiftool is “eighth circle of hell”
+* Image when stegged w/ incoherency we get Joby + Chair referring to Joby chairperson which is **Paul Sciarra** who also founded Pinterest
+* Image’s author in exiftool gives “_eighth circle of hell_”
 * Googling it gives “malebolge” referring to “malbolge” esoteric lang
 * Level text is base 64 which gives text in malbolge esoteric lang
-* Decoding it we get “Salavert Anais”
+* Decoding it we get “_Salavert Anais_”
 * Searching this name on Pinterest gives profile
 * ![alt text](media/pinterest-profile.png "Pinterest Profile")
 * PFP is of proffesserrx on the discord server, opening his profile on discord you see his bio
-> Melody found in crimson gardens (4)
+    > Melody found in crimson gardens (4)
 "Did you rehearse that in the mirror, or did it just come out that naturally terrible?"
 * The word SONG is hidden directly inside the text. "Melody" is the definition, and the answer is spanning across the words "crimSON Gardens".
 * Song + In the Mirror is song by Michael Jackson
@@ -35,7 +34,7 @@ egamer
 * Page has text ““If only there were a way to turn a hidden message into convincing spam…” referring to spammimic
 * Source code of page has spam text 
 
-> Dear Friend , We know you are interested in receiving
+    > Dear Friend , We know you are interested in receiving
 breath-taking news . If you no longer wish to receive
 our publications simply reply with a Subject: of "REMOVE"
 and you will immediately be removed from our directory
