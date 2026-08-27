@@ -1,0 +1,46 @@
+#include <idc.idc>
+
+static main() {
+	MakeName(0x806c0f0, "R0");
+	MakeName(0x806c0f4, "R1");
+	MakeName(0x806c0f8, "R2");
+	MakeName(0x806c0fc, "R3");
+	MakeName(0x806c100, "R4");
+	MakeName(0x806c104, "R5");
+	MakeName(0x806c108, "R6");
+	MakeName(0x806c110, "D0");
+	MakeName(0x806c118, "D1");
+	MakeName(0x806c120, "D2");
+	MakeName(0x8069802, "demov_end");
+	MakeName(0x8615288, "demov_FAULT");
+	MakeName(0x806c170, "demov_bool_xor");
+	MakeName(0x8214c20, "demov_SYM_ALU_MUL_SUMS");
+	MakeName(0x806c3c0, "demov_SYM_ALU_FALSE");
+	MakeName(0x8415208, "demov_on");
+	MakeName(0x806c150, "demov_bool_and");
+	MakeName(0x81eaa90, "demov_SYM_ALU_MUL_SUM8H");
+	MakeName(0x807ffe0, "demov_add");
+	MakeName(0x84151e0, "demov_esp");
+	MakeName(0x8415218, "demov_target_reg");
+	MakeName(0x81a0110, "demov_and");
+	MakeName(0x8415200, "demov_sel_on");
+	MakeName(0x806e240, "demov_SYM_ALU_B7");
+	MakeName(0x81c0b30, "demov_xor");
+	MakeName(0x80490a0, "demov_DISPATCH");
+	MakeName(0x82032d0, "demov_mul_h");
+	MakeName(0x806c1b0, "demov_SYM_ALU_TRUE");
+	MakeName(0x8415224, "demov_SYM_DATA");
+	MakeName(0x806c190, "demov_bool_xnor");
+	MakeName(0x81b0620, "demov_or");
+	MakeName(0x81e9f70, "demov_SYM_ALU_CLAMP32");
+	MakeName(0x81f2dc0, "demov_mul_l");
+	MakeName(0x81ea780, "demov_SYM_ALU_ADD8L");
+	MakeName(0x8415210, "demov_sel_target");
+	MakeName(0x81eada0, "demov_SYM_ALU_MUL_SHL2");
+	MakeName(0x81eedb0, "demov_SYM_ALU_MUL_SUMS");
+	MakeName(0x8180100, "demov_SYM_ALU_INV16");
+	MakeName(0x806f6b0, "demov_equal");
+	MakeName(0x806a16a, "demov_end");
+	MakeName(0x86153c0, "demov_DISCARD");
+	MakeName(0x8415220, "demov_SYM_SEL_DATA");
+}
