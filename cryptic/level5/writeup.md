@@ -38,3 +38,5 @@ lookitsrobertloggia
 * It is the backlink of a [youtube video](https://www.youtube.com/watch?v=4-ohJ6oXGkI)
 * Youtube video has comment "L as in"
 * In the video, he says L as in robert loggia => Answer
+
+*Writeup written by Jai Dugal*

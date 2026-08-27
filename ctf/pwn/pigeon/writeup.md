@@ -64,3 +64,5 @@ We can, though, use the UAF to our advantage. We know that when option 9 is used
 After that, we use a standard FSOP technique like **House of Apple 2** to pop a shell when the program exits. To know more about House of Apple 2, [read this](https://jia.je/ctf-writeups/2025-09-07-blackhat-mea-ctf-quals-2025/file101.html).
 
 The solve script can be found [here](./solve.py).
+
+*Writeup written by Shyamak Seth*

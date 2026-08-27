@@ -61,3 +61,5 @@ The first email contains the flag:
 ```
 encryptid{x4h00_m0g5_y4h00_1n_3v3ry_r34l1ty}
 ```
+
+*Writeup written by Shyamak Seth*

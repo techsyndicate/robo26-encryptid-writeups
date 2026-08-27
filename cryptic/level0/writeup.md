@@ -19,3 +19,5 @@ welcometolossantos
 * Image of Mt. Chiliad gives GTA 5
 * On Drive when you look at description of the image it says “the album”
 * GTA 5 + Oh No gives Welcome to Los Santos
+
+*Writeup written by Jai Dugal*

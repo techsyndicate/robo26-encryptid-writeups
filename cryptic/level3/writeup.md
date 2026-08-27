@@ -92,3 +92,5 @@ internationaldaytoendobstetricfistula
 * Decoding the whitespace cipher reveals `gmail’s brother at the 10th` => 10th letter = j => jmail is rel.
 * Searching for the text in the pastebin on jmail, we arrive at an email sent to Epstein on 23rd May.
 * Google list of things that happened on 23rd May => International Day to End Obstetric Fistula => Answer.
+
+*Writeup written by Jai Dugal and Bhavit Grover*

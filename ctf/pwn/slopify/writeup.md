@@ -36,3 +36,5 @@ void secret() {
 ```
 
 You can check out the exploit [here](./solve.py).
+
+*Writeup written by Shyamak Seth*

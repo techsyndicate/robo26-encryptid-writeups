@@ -61,3 +61,4 @@ of our offer
 * Shiplord is a game on steam
 * Developer of shiplord is EGAMER
 
+*Writeup written by Jai Dugal*

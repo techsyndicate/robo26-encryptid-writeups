@@ -46,4 +46,4 @@ technobladeneverdies
 * From taking the account name from the earlier paste(ie- piggyking1)will lead  to Technoblade
 * Answer is ‘technobladeneverdies’
 
-
+*Writeup written by Jai Dugal*
