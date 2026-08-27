@@ -12,35 +12,35 @@ pygaming
 The random looking values in the binary are not independent secrets. They were generated sequentially by one reused Python random.Random instance. The two lattice values occur earlier in that stream than the constants used by the verifier. Recover the PRNG stream/state instead of attempting a direct 2^128 hash search.
 ```
 
-Provided files: `phase-loom` (Rust PIE, embeds Python 3.14), `phase-loom.c` (decompiler output), `objdump.txt` (loader disasm), `extracted/` bundle decoded from the loader (`game.py`, `libphase_loom_core.so`, `libphase_loom_core.so.c`, `libphase_loom_core-objdump.txt`, `payload.bin`, `phase_rt_engine_000000/phase_rt_engine.so`, `fonts/`). All offsets below are file offsets == virtual addresses in `.rodata` (`vaddr == offset`), while `.text` is `vaddr == offset + 0x1000`. The embedded `.so` keeps `vaddr == offset + 0x1000` for `.text`.
+Provided files: `src/phase-loom` (Rust PIE, embeds Python 3.14), `src/phase-loom.c` (decompiler output), `src/objdump.txt` (loader disasm), `extracted/` bundle decoded from the loader (`game.py`, `libphase_loom_core.so`, `libphase_loom_core.so.c`, `libphase_loom_core-objdump.txt`, `payload.bin`, `phase_rt_engine_000000/phase_rt_engine.so`, `fonts/`). All offsets below are file offsets == virtual addresses in `.rodata` (`vaddr == offset`), while `.text` is `vaddr == offset + 0x1000`. The embedded `.so` keeps `vaddr == offset + 0x1000` for `.text`.
 
 ## Recon
 
 Start with the loader:
 
 ```bash
-$ file phase-loom
+$ file src/phase-loom
 ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, stripped
 
-$ readelf -h phase-loom
+$ readelf -h src/phase-loom
   Type: DYN (Position-Independent Executable file)
   Machine: Advanced Micro Devices X86-64
   Entry point address: 0xa4550
   Number of section headers: 31
 
-$ readelf -SW phase-loom
+$ readelf -SW src/phase-loom
   [11] .rodata           PROGBITS        0000000000006940 006940 095d60 00 AMS  0   0 16
   [14] .text             PROGBITS        00000000000a4550 0a3550 04f5aa 00  AX  0   0 16
   [22] .data.rel.ro      PROGBITS        00000000000f4b98 0f2b98 0021a0 00  WA  0   0  8
   [28] .data             PROGBITS        00000000000f8380 0f5380 000aa8 00  WA  0   0  8
 ```
 
-The `nb3tkx7e` export (Rust `no_mangle`) plus `_z9kq` and `_phase_payload` (Python names injected at runtime, see `run_game` in `phase-loom.c`) show a Rust binary embedding Python via pyo3 (CPython 3.14.6) running an obfuscated pygame game. No direct `pyarmor` string remains due to debranding, but the behavior reveals it.
+The `nb3tkx7e` export (Rust `no_mangle`) plus `_z9kq` and `_phase_payload` (Python names injected at runtime, see `run_game` in `src/phase-loom.c`) show a Rust binary embedding Python via pyo3 (CPython 3.14.6) running an obfuscated pygame game. No direct `pyarmor` string remains due to debranding, but the behavior reveals it.
 
 Trace unpacking before cleanup wipes the temp dir:
 
 ```bash
-$ strace -f -e trace=file,unlink,unlinkat phase-loom
+$ strace -f -e trace=file,unlink,unlinkat src/phase-loom
 2469  mkdir("/tmp/.m<hex>", 0777)                         = 0
 2469  openat(AT_FDCWD, "/tmp/.m<hex>/game.py", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 3
 2469  mkdir("/tmp/.m<hex>/phase_rt_engine_000000", 0777)  = 0
@@ -55,14 +55,14 @@ $ strace -f -e trace=file,unlink,unlinkat phase-loom
 2469  unlinkat(4, "game.py", 0)                              = 0
 2469  unlinkat(AT_FDCWD, "/tmp/.m<hex>", AT_REMOVEDIR)    = 0
 
-$ ltrace -e dlopen+dlsym+dlclose phase-loom
+$ ltrace -e dlopen+dlsym+dlclose src/phase-loom
 libpython3.14.so.1.0->dlopen("/tmp/.m<hex>/phase_rt_engine_000000/phase_rt_engine.so", 2) = 0x5dd5336f4210
 libpython3.14.so.1.0->dlsym(0x5dd5336f4210, "PyInit_phase_rt_engine") = 0x74a091010bf0
 ```
 
 The bundle materializes at `/tmp/.m{pid ^ 0x5a17c3e9}` then is unlinked in reverse. `dlsym` resolves `PyInit_phase_rt_engine` to `base + 0x10bf0`, matching `readelf` export. The Rust-side `dlopen` of `libphase_loom_core.so` is via function pointer and invisible to `ltrace`. A `LD_PRELOAD` shim that ignores `unlinkat` or `gdb catch syscall unlinkat` captures the files without decoding. The decoded bundle is already in `extracted/` for this writeup.
 
-Loader logic in `objdump.txt` is at `0xa7497..0xa94xx`:
+Loader logic in `src/objdump.txt` is at `0xa7497..0xa94xx`:
 
 ```c
 main():
@@ -105,7 +105,7 @@ Decoded table:
 | 6 | `fonts/Lato-Bold.ttf` | 491889 | 34729 | 70576 |
 | 7 | `payload.bin` | 526618 | 56812 | 56786 |
 
-How decode works (`objdump.txt`):
+How decode works (`src/objdump.txt`):
 
 ```asm
 a7497:  lea 0x98e40(%rip),%r13        ; TABLE base
@@ -146,7 +146,7 @@ for i in range(8):
     open(path, 'wb').write(plain)
 ```
 
-This reproduces `extracted/` exactly. See `phase-loom.c` for the decompiled `materialize` loop.
+This reproduces `extracted/` exactly. See `src/phase-loom.c` for the decompiled `materialize` loop.
 
 ### 2. PyArmor debrand
 

@@ -12,13 +12,13 @@ The developer claims that the vault takes forever to load and is thus uncrackabl
 
 ## Recon
 
-The binary is a 32-bit movfuscated ELF with no clear `main` in `objdump -d`. See `objdump.txt` for the full 25k instruction dump and `cfg.dot` for the control flow and `symbols.idc` for the demov symbols. Quick triage:
+The binary is a 32-bit movfuscated ELF with no clear `main` in `objdump -d`. See `src/objdump.txt` for the full 25k instruction dump and `src/cfg.dot` for the control flow and `src/symbols.idc` for the demov symbols. Quick triage:
 
 ```bash
-$ file vault
+$ file src/vault
 ELF 32-bit LSB executable, Intel i386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, stripped
 
-$ strings vault | head -n 22
+$ strings src/vault | head -n 22
 Access denied.
 Format: XXXX-XXXX-XXXX-XXXX
 Usage: %s <key>
@@ -33,16 +33,16 @@ Running with a key prints `Access denied.` or `Access granted! Flag: %s` and exp
 `objdump -d` shows almost all instructions are `mov` wired by a dispatch loop over a table:
 
 ```bash
-$ grep "0x806e240" objdump.txt | head
+$ grep "0x806e240" src/objdump.txt | head
 mov 0x806e240(,%eax,4),%edx
 ```
 
-This is classic movfuscator (movcc) where every operation is emulated through dispatch tables at `0x806e240` and `symbols.idc` maps `demov_*` helpers.
+This is classic movfuscator (movcc) where every operation is emulated through dispatch tables at `0x806e240` and `src/symbols.idc` maps `demov_*` helpers.
 
 Dump the data section:
 
 ```bash
-$ objdump -s -j .data vault
+$ objdump -s -j .data src/vault
  806c030 04e58b17 a32141b5 743a1258 eddf0eb6  .....!A.t:.X....
  806c040 8b99ff7e 9c78ff37 46f0e4d7 a8a52781  ...~.x.7F.....'.
  806c050 7292716c 86416363 65737320 64656e69  r.ql.Access deni
@@ -59,7 +59,7 @@ $ objdump -s -j .data vault
 movcc stores globals in data cells at `0x806c0f0` to `0x806c0fc`. The constants are the only 32-bit immediates written there. `0x806c0f0` is the first 16 byte slot after `"/proc/self/status"` at `0x806c0e5`:
 
 ```bash
-$ objdump -d vault | grep -E '\$0x[0-9a-f]{8},0x806c0f'
+$ objdump -d src/vault | grep -E '\$0x[0-9a-f]{8},0x806c0f'
  804bb02: c7 05 f0 c0 06 08 ff  movl   $0xffffffff,0x806c0f0   # -1: init
  805b3c5: c7 05 f4 c0 06 08 b9  movl   $0x9e3779b9,0x806c0f4   # rng add (golden ratio)
  805b913: c7 05 fc c0 06 08 6b  movl   $0x85ebca6b,0x806c0fc   # rng mul #1
@@ -74,7 +74,7 @@ $ objdump -d vault | grep -E '\$0x[0-9a-f]{8},0x806c0f'
 
 Only `movl $imm,0x806c0fX` with 8 hex digits are listed. Small writes like `movl $0x1,0x806c0f8` are runtime flags. Reads like `mov 0x806c0fc,%eax` are separate. Cells are reused: `0x806c0fc` holds seed and both muls, `0x806c0f4` holds golden ratio and fround mul, `0x806c0f0` holds -1. At `0x806c030` to `0x806c054` are 37 bytes of encrypted flag ending where `Access deni` starts at `0x806c055`.
 
-Decoded decompiler is in `vault_patched.c` and `vault_patched` binary. Check `symbols.idc` for `R0..R3` at `0x806c0f0..0x806c0fc`.
+Decoded decompiler is in `src/vault_patched.c` and `src/vault_patched` binary. Check `src/symbols.idc` for `R0..R3` at `0x806c0f0..0x806c0fc`.
 
 ## Exploitation
 
