@@ -2,9 +2,9 @@
 
 ## Challenge Info
 
-**Category:** Pwn
-**Points:** 250
-**Difficulty:** Easy
+**Category:** Pwn  
+**Points:** 250  
+**Difficulty:** Easy  
 **Challenge Description:**
 
 ```

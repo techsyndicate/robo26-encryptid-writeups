@@ -2,8 +2,8 @@
 
 ## Challenge Info
 
-**Points:** 250
-**Difficulty:** Easy
+**Points:** 250  
+**Difficulty:** Easy  
 **Challenge Description:**
 
 ```
