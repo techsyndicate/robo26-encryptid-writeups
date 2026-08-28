@@ -79,7 +79,7 @@ internationaldaytoendobstetricfistula
 * Change the position letters to I (9), R (18), O (15), N (14) and the ring to L (12), A (1), V (22), A (1). Iron and Lava were found earlier in the level. Change the ciphertext and you would get `laila goone r` as the output.
 * Go to tinyurl.com/lailagooner to get a [google doc](https://docs.google.com/document/d/13ZVQVfmVtVF_8NVboa7WwEmex9Ha4ohnvz7YpebJ3BU/edit?tab=t.0).
 * This google doc has nothing, until you get to the 37th page, where there's a JSFuck ciphertext.
-* Decoding it reveals another [drive link](https://drive.google.com/file/d/1LB-I-xf8dAN25VOhuh38Bf2SojqbLaRL/view), zooming in reveals the character **Summer Smith** from Family Guy.
+* Decoding it reveals another [drive link](https://drive.google.com/file/d/1LB-I-xf8dAN25VOhuh38Bf2SojqbLaRL/view), zooming in reveals the character **Summer Smith** from Rick and Morty.
 * Counting the number of times this character is displayed, we get 500 occurences => 500 days of summer.
 * From 500 days of summer, at the time stamp 09:50, as mentioned in the tab from the google doc, we get a reference of the smiths in the movie.
 * Now the smiths here isn't the band, but the movie Mr. and Mrs. Smith => Brad Pitt.
