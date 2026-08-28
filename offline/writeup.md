@@ -1,10 +1,5 @@
 # Offline Encryptid Level
 
-## Challenge Info
-
-**Category**: dude how do i put this into words   
-**Points**: ∞
-
 ## Theme
 The offline level is an **Escape Room** challenge. You are taken to the School Library, in which all lights are dimmed and an environment is set up. The goal is to find **Shyam Prakash**, the penguin mascot of Tech Syndicate, sitting outside the **Exit Door**, and escape out of the room with him. However, the exit door has been locked using a 4-digit code. Your job is to unlock this door and escape.
 
@@ -43,7 +38,7 @@ Something has been written on the sheet music with invisible ink, and can only b
 
 ![5.jpg](./media/5.jpg)
 
-"His first name" means **Antonio**, which will be relevant in a bit. For now, if you turn over the second page of the sheet music, you see this cipher drawn out:
+This shows, **What is his first name?** "His first name" means **Antonio**, which will be relevant in a bit. For now, if you turn over the second page of the sheet music, you see this cipher drawn out:
 
 ![6.jpg](./media/6.jpg)
 
@@ -125,14 +120,14 @@ You have to split up so that one person goes into one room and the other person 
 
 ![Key.png](./media/key.gif)
 
-**The Second Room** has four hidden sheets with different symbols and has text specifying at which position these digits go. You have shout and coordinate with your teammate in the other room which you can't see to decode the 4 digit code.
+**The Second Room** has four hidden sheets with different symbols and has text specifying at which position these digits go. You have to shout and coordinate with your teammate in the other room which you can't see to decode the 4 digit code.
 
 ![sheets.png](./media/sheets.png)
 
 Decoding these 4 sheets, you get the code
 > 3193
 
-Finally, you have to use this code to **unlock the exit** and save shyamprakash.
+Finally, you have to use this code to **unlock the Exit Door** and save shyamprakash :D
 
 
 *Challenge authored by Jai Dugal and Shyamak Seth*
