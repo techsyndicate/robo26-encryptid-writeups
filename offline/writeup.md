@@ -11,6 +11,7 @@ The offline level is an **Escape Room** challenge. You are taken to the School L
 ## Rules
 1. What happens in the room, stays in the room.
 2. You are given a maximum **20 minutes** to solve the level. Points are given based on how far you reached in the level. Finishing the level before time gives you more of an advantage.
+3. Two hunt masters and one judge (alumnus) will be with you for the entire duration of the level.
 3. Leads are given throughout the level to guide you, but only **2 substantial hints** are allowed for free at any point of time during the level. Apart from these, 3 more hints can be taken, but these cause increasing penalties in points.
 4. You are allowed to take your phones into the room. Google Search and basic phone functionality are allowed, but usage of AI like Google Lens, Chatbots, etc. is strictly forbidden.
 
@@ -40,11 +41,11 @@ Right in front of the Suzanne Collins banner, you find a stand with some sheet m
 
 Something has been written on the sheet music with invisible ink, and can only be seen in this blue light.
 
-![5.png](./media/5.png)
+![5.jpg](./media/5.jpg)
 
 "His first name" means **Antonio**, which will be relevant in a bit. For now, if you turn over the second page of the sheet music, you see this cipher drawn out:
 
-![6.png](./media/6.png)
+![6.jpg](./media/6.jpg)
 
 This is a custom implementation of the **Pigpen Cipher** written out manually. It directly decodes to: 
 
@@ -59,8 +60,65 @@ The next step is to find this book in the library. There are many books, so the 
 
 Once you find it, right underneath the book, you find this little note:
 
-![7.png](./media/7.png)
+![7.jpg](./media/7.jpg)
 
 The first three numbers are coordinates for the **Book Cipher**: Page Number, Line, and Word. Going to the specified coordinates gives you the word **"Balthasar"**. The second clue in the note tells you to "go to the laptop". Right on the other side of the shelf, you find a table with an open laptop on it. A website is displayed on it.
 
-TO BE CONTINUED
+![8.png](./media/8.png)
+
+The password is the word that you found in the last step: **Balthasar**. Putting this in the textbox unlocks a new screen. What you now see is a Web Exploitation CTF Challenge, with the flag split into four parts. Your job is to find these four parts, assemble them together, and put the final flag in the textbox.
+
+The first part is in the HTML source:
+
+![9.png](./media/9.png)
+
+The second part is in the Response Headers (Network Tab):
+
+![10.png](./media/10.png)
+
+For the third part, when you go to `/robots.txt`, you see the following entry:
+
+```
+/something/very/random/balalalala
+```
+
+Going to this path on the website gives you the third part of the flag.
+
+![11.png](./media/11.png)
+
+For the fourth part, take a look at the source code of `index.js` on the website:
+
+```js
+var fragments = [
+  66, 30, 92, 25, 117, 30, 73, 66, 27, 25, 92, 25, 78, 117,
+  83, 26, 95, 68, 77, 117, 90, 30, 78, 30, 93, 30, 68, 87
+];
+
+function xorKey() {
+  return (7**2) - (7**1);
+}
+
+function retrievePart4() {
+  return String.fromCharCode.apply(null, fragments.map(function (n) {
+    return n ^ xorKey();
+  }));
+}
+```
+
+It performs a simple XOR operation on a fixed array. You don't have to reverse it, because you can simply run the `retrievePart4()` function in the console to get the final part: `h4v3_4ch13v3d_y0ung_p4d4w4n}`
+
+We now combine all the four parts to get the flag:
+
+```
+encryptid{shy4mpR4k45h_w1ll_b3_pr0uD_0f_wh47_y0u_h4v3_4ch13v3d_y0ung_p4d4w4n}
+```
+
+Putting this in the textbox on the main page, we get:
+
+![12.png](./media/12.png)
+
+Follow the instructions and speak the tongue twister out loud to the hunt masters. On doing so, they now give you instructions to the next and final part of the level: the mysterious two dark rooms in the corner of the library.
+
+TO BE CONTINUED   
+
+*Challenge authored by Jai Dugal and Shyamak Seth*
