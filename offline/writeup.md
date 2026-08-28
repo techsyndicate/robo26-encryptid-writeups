@@ -6,7 +6,7 @@
 **Points**: ∞
 
 ## Theme
-The offline level is an **Escape Room** challenge. You are taken to the School Library, in which all lights are dimmed and an environment is set up. The goal is to find **Shyam Prakash**, the penguin mascot of Tech Syndicate, sitting outside the **Exit Door**, and escape out of the room with him. However, the exit door has been locked. Your job is to unlock this door and escape.
+The offline level is an **Escape Room** challenge. You are taken to the School Library, in which all lights are dimmed and an environment is set up. The goal is to find **Shyam Prakash**, the penguin mascot of Tech Syndicate, sitting outside the **Exit Door**, and escape out of the room with him. However, the exit door has been locked using a 4-digit code. Your job is to unlock this door and escape.
 
 ## Rules
 1. What happens in the room, stays in the room.
@@ -119,6 +119,20 @@ Putting this in the textbox on the main page, we get:
 
 Follow the instructions and speak the tongue twister out loud to the hunt masters. On doing so, they now give you instructions to the next and final part of the level: the mysterious two dark rooms in the corner of the library.
 
-TO BE CONTINUED   
+You have to split up so that one person goes into one room and the other person has to go in the other. 
+
+**The First Room**  is completely dark with only one projection which rotates to displays the key to decode a symbol cipher
+
+![Key.png](./media/key.gif)
+
+**The Second Room** has four hidden sheets with different symbols and has text specifying at which position these digits go. You have shout and coordinate with your teammate in the other room which you can't see to decode the 4 digit code.
+
+![sheets.png](./media/sheets.png)
+
+Decoding these 4 sheets, you get the code
+> 3193
+
+Finally, you have to use this code to **unlock the exit** and save shyamprakash.
+
 
 *Challenge authored by Jai Dugal and Shyamak Seth*
