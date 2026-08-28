@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Xahoo</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #e8e8e8;
+            padding: 1rem;
+        }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 2.5rem 2.25rem;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .logo .mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #fff;
+            margin: 0 auto 0.75rem;
+        }
+        h1 {
+            font-size: 1.4rem;
+            margin: 0;
+            color: #222;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+            margin: 0 0 1.5rem;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            padding: 0.75rem 0.9rem;
+            outline: none;
+            background: #fff;
+            color: #222;
+        }
+        textarea:focus {
+            border-color: #888;
+        }
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 1.25rem;
+            background: #222;
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            padding: 0.85rem;
+            border-radius: 6px;
+        }
+        input[type="submit"]:hover {
+            background: #444;
+        }
+        .alt {
+            text-align: center;
+            margin: 1.25rem 0 0;
+            font-size: 0.88rem;
+            color: #888;
+        }
+        .alt a {
+            color: #222;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .alt a:hover {text-decoration: underline;}
+        .error {
+            margin: 1rem 0 0;
+            padding: 0.7rem 1rem;
+            background: #fdf0f0;
+            border: 1px solid #f0c9c9;
+            color: #a33;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <div class="mark">X</div>
+            <h1>Xahoo</h1>
+        </div>
+        <p class="subtitle">Login with your 64-character private key</p>
+        <form action="" method="POST">
+            <textarea name="key" placeholder="Paste your 64-character private key..."></textarea>
+            <input type="submit" value="Unlock inbox">
+        </form>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <p class="alt"><a href="/login">Login normally instead</a></p>
+    </div>
+</body>
+</html>

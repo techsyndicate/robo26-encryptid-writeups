@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            background-image: url('/static/images/background.jpg');
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        h1 {
+            color: white;
+            font-size: 5em;
+            margin: 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            margin-top: 1.5em;
+            gap: 1em;
+        }
+        button {
+            border: 1px solid #999;
+            outline: none;
+            border-radius: 100vw;
+            background: black;
+            color: white;
+            font-size: 1.25em;
+            padding: 1vw 1.5vw;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is <span style="color: #16e16e">TRAVIS</span></h1>
+    <div class="buttons">
+        <button onclick="window.location.href = '/book'">Book Tickets</button>
+        <button onclick="window.location.href = '/checkin'">Check In</button>
+    </div>
+</body>
+</html>

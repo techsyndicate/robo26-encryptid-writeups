@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Ticket</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            background-image: url('/static/images/background.jpg');
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        h2 {
+            color: white;
+            font-size: 4em;
+            margin: 0;
+        }
+        input, select {
+            border: none;
+            outline: none;
+            border-radius: 100vw;
+            padding: 1vw;
+            font-size: 1.1em;
+            width: 30vw;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            gap: 1vh;
+        }
+        button {
+            border: 1px solid #999;
+            outline: none;
+            border-radius: 100vw;
+            background: black;
+            color: white;
+            font-size: 1.25em;
+            padding: 1vw 1.5vw;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Book a Ticket</h2>
+    <form method="POST" onsubmit="doStuff()">
+        <input type="text" name="name" autocomplete="off" placeholder="Your Name:" required>
+        <select name="level">
+            <option disabled selected>Ticket Type:</option>
+            <option value="VIP">VIP</option>
+            <option value="Member">Member</option>
+            <option value="Regular">Regular</option>
+        </select>
+        <button type="submit">Generate Ticket</button>
+    </form>
+    <br>
+    <script>
+        function doStuff() {
+            setTimeout(() => {
+                window.location.href = '/'
+            }, 2000)
+        }
+    </script>
+</body>
+</html>

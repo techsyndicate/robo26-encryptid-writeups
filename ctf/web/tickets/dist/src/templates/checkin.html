@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check-In</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {
+            background-image: url('/static/images/background.jpg');
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        h2 {
+            color: white;
+            font-size: 4em;
+            margin: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            margin-top: 1.5em;
+        }
+        .button {
+            border: 1px solid #999;
+            outline: none;
+            border-radius: 100vw;
+            background: black;
+            color: white;
+            font-size: 1.25em;
+            padding: 1vw 1.5vw;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload Your Ticket</h2>
+    <form method="POST" enctype="multipart/form-data" id="form">
+        <input type="file" name="ticket" id="ticket" style="display: none" onchange="doStuff(event)">
+        <label for="ticket" class="button">Upload Ticket</label>
+    </form>
+    <script>
+        function doStuff(e) {
+            document.getElementById('form').submit()
+        }
+    </script>
+</body>
+</html>

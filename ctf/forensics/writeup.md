@@ -79,9 +79,10 @@ With `STORED` the file content is stored so the 4 byte plaintext is directly the
 
 The solve script can be found [here](./solve.py) which gives us: `https://drive.google.com/file/d/1MBt-OHJPGdWSZz668XV0c71vBkqpFqI7`
 
-The recovered wav is an SSTV encoding which is a narrowband mode for transmitting static images over voice channels by reducing the scan rate the ~3 MHz bandwidth of broadcast television is compressed into ~3 kHz for SSB transmission on amateur bands.
+The recovered wav ([download here](./media/chall.wav)) is an SSTV encoding which is a narrowband mode for transmitting static images over voice channels by reducing the scan rate the ~3 MHz bandwidth of broadcast television is compressed into ~3 kHz for SSB transmission on amateur bands.
 
-Decoding with [sstv-decoder.mathieurenaud.fr](https://sstv-decoder.mathieurenaud.fr/) gives the ![flag](src/flag.png)
+Decoding with [sstv-decoder.mathieurenaud.fr](https://sstv-decoder.mathieurenaud.fr/) gives the flag.   
+![flag](./media/flag.png)
 
 ## Flag
 
@@ -89,4 +90,4 @@ Decoding with [sstv-decoder.mathieurenaud.fr](https://sstv-decoder.mathieurenaud
 encryptid{1ts_c0mm0n_b4ll}
 ```
 
-*Writeup written by Ayush Sharma*
+*Writeup written by Aarav Juneja*
