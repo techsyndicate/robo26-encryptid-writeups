@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Token Shop</title>
+    <script defer src="/static/index.js"></script>
+  </head>
+  <body>
+    <h1>Token Shop</h1>
+    <p>Claim a customer token and submit it to the shop.</p>
+
+    <label for="username">Username</label>
+    <input id="username" autocomplete="off" maxlength="28" placeholder="cipher_sparrow">
+    <button id="claim">Claim tokens</button>
+    <p id="status" aria-live="polite"></p>
+
+    <section id="token-panel" hidden>
+      <h2>Customer token</h2>
+      <pre><code id="token"></code></pre>
+      <p id="bundle"></p>
+      <button id="copy">Copy token</button>
+      <button id="visit">Visit Token Shop</button>
+      <p id="shop-status" aria-live="polite"></p>
+    </section>
+  </body>
+</html>

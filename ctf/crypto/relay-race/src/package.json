@@ -1,0 +1,13 @@
+{
+  "name": "relay-race",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Encryptid 2026",
+  "scripts": {
+    "start": "node server.js",
+    "edge": "node edge.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
