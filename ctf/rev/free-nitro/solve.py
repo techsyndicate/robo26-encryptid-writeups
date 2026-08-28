@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from Crypto.Cipher import AES
+
 MSA = 0x02221736F0F06707
 MSB = 0x31CBA7E18134D926
 SCH_A = 0x9E3779B97F4A7C15
@@ -34,12 +36,5 @@ def aes_key_bytes(msa, msb):
     return bytes(out)
 
 key = aes_key_bytes(MSA, MSB)
-print(key.hex())
 
-try:
-    from Crypto.Cipher import AES
-    aes = AES.new(key, AES.MODE_GCM, nonce=NONCE)
-    flag = aes.decrypt_and_verify(AES_CT, AES_TAG)
-    print(flag.decode())
-except ImportError:
-    print("install pycryptodome: pip install pycryptodome")
+print(AES.new(key, AES.MODE_GCM, nonce=NONCE).decrypt_and_verify(AES_CT, AES_TAG).decode())
