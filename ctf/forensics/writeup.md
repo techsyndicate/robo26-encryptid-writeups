@@ -2,8 +2,8 @@
 
 ## Challenge Info
 
-**Category:** Forensics
-**Points:** 250
+**Category:** Forensics   
+**Points:** 250   
 **Challenge Description:**
 
 ```
