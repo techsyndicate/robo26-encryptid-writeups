@@ -1,9 +1,8 @@
 # Free Nitro
-
 ## Challenge Info
 
-**Points:** 250  
-**Difficulty:** Easy  
+**Category**: Reverse Engineering   
+**Points:** 250   
 **Challenge Description:**
 
 ```

@@ -12,6 +12,7 @@ The offline level is an **Escape Room** challenge. You are taken to the School L
 1. What happens in the room, stays in the room.
 2. You are given a maximum **20 minutes** to solve the level. Points are given based on how far you reached in the level. Finishing the level before time gives you more of an advantage.
 3. Leads are given throughout the level to guide you, but only **2 substantial hints** are allowed for free at any point of time during the level. Apart from these, 3 more hints can be taken, but these cause increasing penalties in points.
+4. You are allowed to take your phones into the room. Google Search and basic phone functionality are allowed, but usage of AI like Google Lens, Chatbots, etc. is strictly forbidden.
 
 ## Walkthrough
 On entering the room, you are given **2 envelopes** with starter clues in them:

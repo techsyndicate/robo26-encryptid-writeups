@@ -1,9 +1,8 @@
 # Phase Loom
-
 ## Challenge Info
 
-**Points:** 500  
-**Difficulty:** Hard  
+**Category**: Reverse Engineering   
+**Points:** 500   
 **Challenge Description:**
 
 ```

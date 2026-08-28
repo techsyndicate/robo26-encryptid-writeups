@@ -1,10 +1,8 @@
 # Easier Pwn
-
 ## Challenge Info
 
-**Category:** Pwn  
-**Points:** 250  
-**Difficulty:** Easy  
+**Category:** Binary Exploitation    
+**Points:** 250   
 **Challenge Description:**
 
 ```

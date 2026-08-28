@@ -1,9 +1,8 @@
 # Vault
-
 ## Challenge Info
 
-**Points:** 500  
-**Difficulty:** Medium  
+**Category**: Reverse Engineering   
+**Points:** 500   
 **Challenge Description:**
 
 ```
