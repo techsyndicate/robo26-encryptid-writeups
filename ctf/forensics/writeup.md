@@ -2,8 +2,8 @@
 
 ## Challenge Info
 
-**Category:** Forensics   
-**Points:** 250   
+**Category:** Forensics
+**Points:** 250
 **Challenge Description:**
 
 ```
@@ -81,7 +81,7 @@ The solve script can be found [here](./solve.py) which gives us: `https://drive.
 
 The recovered wav ([download here](./media/chall.wav)) is an SSTV encoding which is a narrowband mode for transmitting static images over voice channels by reducing the scan rate the ~3 MHz bandwidth of broadcast television is compressed into ~3 kHz for SSB transmission on amateur bands.
 
-Decoding with [sstv-decoder.mathieurenaud.fr](https://sstv-decoder.mathieurenaud.fr/) gives the flag.
+Decoding with [sstv-decoder.mathieurenaud.fr](https://sstv-decoder.mathieurenaud.fr/) gives the flag.   
 ![flag](./media/flag.png)
 
 ## Flag
