@@ -1,7 +1,7 @@
 # Offline Encryptid Level
 
 ## Theme
-The offline level is an **Escape Room** challenge. You are taken to the School Library, in which all lights are dimmed and an environment is set up. The goal is to find **Shyam Prakash**, the penguin mascot of Tech Syndicate, sitting outside the **Exit Door**, and escape out of the room with him. However, the exit door has been locked using a 4-digit code. Your job is to unlock this door and escape.
+The offline level is an **Escape Room** challenge. You are taken to the School Library, where all lights are dimmed and an environment is set up. The goal is to find **Shyam Prakash**, the penguin mascot of Tech Syndicate, sitting outside the **Exit Door**, and escape out of the room with him. However, the exit door has been locked using a 4-digit code. Your job is to unlock this door and escape.
 
 ## Rules
 1. What happens in the room, stays in the room.
@@ -30,11 +30,11 @@ Inside the suitcase, you find a new envelope with another message inside it.
 
 ![4.png](./media/4.png)
 
-You now get out of the square section of the library, because the first cryptic clue in the message points to **Suzanne Collins**. Looking around in the library, you find a large banner with her face on it, and other works of her. This is where the second clue of the message comes in: *"a whispered melody written in ink and stain"*. **Sheet music!**
+You now get out of the square section of the library, because the first cryptic clue in the message points to **Suzanne Collins**. Looking around in the library, you find a large banner with her face on it, and other works of her. This is where the second clue of the message comes in: *"a whispered melody written in ink and stain"*. **Sheet music**
 
-Right in front of the Suzanne Collins banner, you find a stand with some sheet music kept on it. It shows **Spring** from **The Four Seasons** by **Antonio Vivaldi**. You also find a weird looking pen kept on the stand, which has a switch. When you turn it on, blue light comes out of one end of the pen.
+Right in front of the Suzanne Collins banner, you find a stand with some sheet music kept on it. It shows **Spring** from **The Four Seasons** by **Antonio Vivaldi**. You also find a weird looking pen kept on the stand, which has a switch. When you turn it on, UV light comes out of one end of the pen.
 
-Something has been written on the sheet music with invisible ink, and can only be seen in this blue light.
+Something has been written on the sheet music with invisible ink, and can only be seen in this UV light.
 
 ![5.jpg](./media/5.jpg)
 
@@ -116,7 +116,7 @@ Follow the instructions and speak the tongue twister out loud to the hunt master
 
 You have to split up so that one person goes into one room and the other person has to go in the other. 
 
-**The First Room**  is completely dark with only one projection which rotates to displays the key to decode a symbol cipher
+**The First Room**  is completely dark with only one projection which rotates to display the key that decodes a custom symbol cipher
 
 ![Key.png](./media/key.gif)
 
@@ -127,7 +127,7 @@ You have to split up so that one person goes into one room and the other person 
 Decoding these 4 sheets, you get the code
 > 3193
 
-Finally, you have to use this code to **unlock the Exit Door** and save shyamprakash :D
+Finally, you have to use this code to **unlock the Exit Door** and **save shyamprakash** :D
 
 
 *Challenge authored by Jai Dugal and Shyamak Seth*
