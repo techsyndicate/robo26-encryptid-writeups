@@ -79,7 +79,7 @@ You can check out the exploit [here](./solve.py).
 
 ## Flag
 ```
-encryptid{ch0mp_541d_7h3_p1g30n_45_h3_g4v3_y0u_7h3_fl4g}
+encryptid{0h_50_y0u_kn0w_pwn}
 ```
 
 *Writeup written by Shyamak Seth*
