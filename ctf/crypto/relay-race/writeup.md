@@ -161,7 +161,7 @@ The solve script is [here](./solve.sage).
 ## Flag
 
 ```
-encryptid{...}
+encryptid{run_l1k3_y0uv3_n3v3r_run_b3f0r3!}
 ```
 
 *Writeup written by Aarav Juneja*
